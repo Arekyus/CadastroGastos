@@ -1,15 +1,12 @@
 ﻿@model IEnumerable<CadastroGastos.Models.Contas>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lista de contas";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<h1>Lista de Contas</h1>
+<br>
+<table class="table table-striped table-hover">
     <thead>
         <tr>
             <th>
@@ -43,11 +40,14 @@
                 @Html.DisplayFor(modelItem => item.Ativo)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-secondary">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">Apagar</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+    <p>
+    <br><a asp-action="Create" class="btn btn-primary">Criar nova conta</a>
+    </p>
